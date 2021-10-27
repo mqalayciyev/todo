@@ -25,7 +25,7 @@ function reducer(state, dispatch) {
 
 function App() {
 
-  const [text, setText] = useState();
+  const [ad, setAd] = useState();
   const [id, setId] = useState(0);
 
 
@@ -35,15 +35,15 @@ function App() {
 
 
   const add = () => {
-    console.log(id, text)
+    console.log(id, ad)
     if (id > 0) {
-      dispatch({ type: 'edit', payload: { id: id, name: text } })
+      dispatch({ type: 'edit', payload: { id: id, name: ad } })
     }
     else {
-      dispatch({ type: 'add', payload: text })
+      dispatch({ type: 'add', payload: ad })
     }
 
-    setText('')
+    setAd('')
     setId(0)
   }
 
@@ -52,7 +52,7 @@ function App() {
   }
 
   const edit = (name, id) => {
-    setText(name)
+    setAd(name)
     setId(id)
   }
 
@@ -61,13 +61,13 @@ function App() {
 
 
   const inputChange = (e) => {
-    setText(e.target.value)
+    setAd(e.target.value)
   }
 
 
   return (
     <div className="App">
-      <input type="text" name="ad" value={text} onChange={inputChange} />
+      <input type="text" name="ad" value={ad} onChange={inputChange} />
 
       <button onClick={() => add()}>Add</button>
       {

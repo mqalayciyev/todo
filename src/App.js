@@ -1,4 +1,8 @@
 import React, { useRef, useReducer, useState } from 'react';
+import BookContextProvider from './Context/BookContext';
+import Header from './Components/Header';
+
+import Books from './Components/Books';
 
 function reducer(state, dispatch) {
   if (dispatch.type === 'add') {
@@ -23,60 +27,18 @@ function reducer(state, dispatch) {
   }
 }
 
-function App() {
-
-  const [ad, setAd] = useState();
-  const [id, setId] = useState(0);
-
-
-  const [string, dispatch] = useReducer(reducer, [])
-
-  // const ad = useRef();
-
-
-  const add = () => {
-    console.log(id, ad)
-    if (id > 0) {
-      dispatch({ type: 'edit', payload: { id: id, name: ad } })
-    }
-    else {
-      dispatch({ type: 'add', payload: ad })
-    }
-
-    setAd('')
-    setId(0)
-  }
-
-  const sil = (id) => {
-    dispatch({ type: 'delete', payload: id })
-  }
-
-  const edit = (name, id) => {
-    setAd(name)
-    setId(id)
-  }
-
-
-
-
-
-  const inputChange = (e) => {
-    setAd(e.target.value)
-  }
-
-
+function App(props) {
   return (
-    <div className="App">
-      <input type="text" name="ad" value={ad} onChange={inputChange} />
-
-      <button onClick={() => add()}>Add</button>
-      {
-        string.map((value, key) => {
-          return <p key={key}>{value.name} <button onClick={() => edit(value.name, value.id)}>Edit</button> <button onClick={() => sil(value.id)}>SIL</button></p>
-        })
-      }
-    </div>
+    <BookContextProvider>
+      <div className="App">
+        <Header />
+        <Books />
+      </div>
+    </BookContextProvider>
+    
   );
 }
 
 export default App;
+
+

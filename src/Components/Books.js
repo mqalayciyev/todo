@@ -8,12 +8,10 @@ class Books extends Component {
     render() {
         return (
             <>
-
             <BookContext.Consumer>
                 {
                     (contextBook) => {
                         const { books } = contextBook;
-
                         return (
                             <div className="row">
                             {

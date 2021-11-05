@@ -1,6 +1,7 @@
 import React, { useRef, useReducer, useState } from 'react';
 import BookContextProvider from './Context/BookContext';
 import Header from './Components/Header';
+import Todos from './Components/Todo';
 
 import Books from './Components/Books';
 
@@ -31,8 +32,9 @@ function App(props) {
   return (
     <BookContextProvider>
       <div className="App">
-        <Header />
-        <Books />
+        {/* <Header /> */}
+        {/* <Books /> */}
+        <Todos />
       </div>
     </BookContextProvider>
     

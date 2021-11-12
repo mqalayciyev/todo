@@ -1,0 +1,33 @@
+.card .content{
+    height: 0;
+    visibility: hidden;
+    opacity: 0;
+    position: absolute;
+    top: -5px;
+    left: -1px;
+    width: 101%;
+    padding: 10px;
+    z-index: 99;
+    background-color: #fff;
+
+}
+.card:hover .content{
+    height: max-content;
+    visibility: visible;
+    opacity: 1;
+    border: 1px solid rgba(0,0,0,.125);
+    border-top: none;
+    border-radius: 0.25rem;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+}
+.card:hover{
+    border-bottom: none;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+}
+.card {
+    box-sizing: unset;
+    cursor: pointer;
+    padding: 0px;
+}

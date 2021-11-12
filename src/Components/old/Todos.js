@@ -11,7 +11,7 @@ function Todos(){
 
     const getTodos = async ()=>{
         let response = await axios.get('https://jsonplaceholder.typicode.com/todos')
-        console.log(response.data)
+        // console.log(response.data)
 
         setTodo(response.data)
     }

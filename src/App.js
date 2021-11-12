@@ -1,43 +1,31 @@
 import React, { useRef, useReducer, useState } from 'react';
-import BookContextProvider from './Context/BookContext';
+import Home from './Components/Home';
+import Cart from './Components/Cart';
 import Header from './Components/Header';
-import Todos from './Components/Todo';
 
-import Books from './Components/Books';
+import "./CSS/style.css";
 
-function reducer(state, dispatch) {
-  if (dispatch.type === 'add') {
-    let object = { name: dispatch.payload, id: Math.random() }
-    let newArray = [...state, object]
-    return newArray;
-  }
-  else if (dispatch.type === 'delete') {
-    let arr = state.filter((element) => element.id !== dispatch.payload)
-    return arr;
-  }
-  else if (dispatch.type === 'edit') {
-    for (var i = 0; i < state.length; i++) {
-      if (dispatch.payload.id === state[i].id) {
-        state[i].name = dispatch.payload.name
-      }
-    }
-    return state;
-  }
-  else {
-    return [];
-  }
-}
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+
+
 
 function App(props) {
   return (
-    <BookContextProvider>
-      <div className="App">
-        {/* <Header /> */}
-        {/* <Books /> */}
-        <Todos />
-      </div>
-    </BookContextProvider>
-    
+
+    <div className="container">
+      <Router>
+        <Header />
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/cart" element={<Cart />} />
+          {/* <Route path="/about" element={<About />}/>
+          <Route path="/services" element={<Services />}/>
+          <Route path="/contact" element={<Contact />}/>
+          <Route path="*" element={<Notfound />}/> */}
+        </Routes>
+      </Router>
+    </div>
+
   );
 }
 

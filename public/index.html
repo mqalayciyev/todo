@@ -24,17 +24,31 @@
       work correctly both with client-side routing and a non-root public URL.
       Learn how to configure a non-root public URL by running `npm run build`.
     -->
-    
+
     <title>React App</title>
-    <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700" rel="stylesheet">
+    <link
+      href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700"
+      rel="stylesheet"
+    />
 
     <title>Host Cloud - Free HTML5 Bootstrap Template</title>
 
     <!-- Bootstrap core CSS -->
-    <link href="%PUBLIC_URL%/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link
+      href="%PUBLIC_URL%/vendor/bootstrap/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
 
     <!-- Additional CSS Files -->
-    <link rel="stylesheet" href="%PUBLIC_URL%/assets/css/fontawesome.css">
+    <link rel="stylesheet" href="%PUBLIC_URL%/assets/css/fontawesome.css" />
+    <link
+      rel="stylesheet"
+      href="%PUBLIC_URL%/vendor/OwlCarousel/dist/assets/owl.carousel.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="%PUBLIC_URL%/vendor/OwlCarousel/dist/assets/owl.theme.default.min.css"
+    />
     <!-- <link rel="stylesheet" href="%PUBLIC_URL%/assets/css/templatemo-host-cloud.css">
     <link rel="stylesheet" href="%PUBLIC_URL%/assets/css/owl.css"> -->
   </head>
@@ -51,16 +65,26 @@
       To begin the development, run `npm start` or `yarn start`.
       To create a production bundle, use `npm run build` or `yarn build`.
     -->
-    
+
     <!-- Bootstrap core JavaScript -->
     <script src="%PUBLIC_URL%/vendor/jquery/jquery.min.js"></script>
     <script src="%PUBLIC_URL%/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-
+    <script src="%PUBLIC_URL%/vendor/OwlCarousel/dist/owl.carousel.min.js"></script>
+    <script>
+      $(document).ready(function () {
+        $(".owl-carousel").owlCarousel({
+          margin: 5,
+          loop: true,
+          nav: true,
+          dots: true,
+          autoplay: true
+        });
+      });
+    </script>
     <!-- Additional Scripts -->
     <!-- <script src="%PUBLIC_URL%/assets/js/custom.js"></script>
     <script src="%PUBLIC_URL%/assets/js/owl.js"></script>
     <script src="%PUBLIC_URL%/assets/js/accordions.js"></script> -->
-
 
     <!-- <script language = "text/Javascript"> 
       cleared[0] = cleared[1] = cleared[2] = 0; //set a cleared flag for each field

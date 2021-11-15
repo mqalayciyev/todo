@@ -31,3 +31,56 @@
     cursor: pointer;
     padding: 0px;
 }
+
+
+
+.sub-menu{
+    position: absolute;
+    right: -10rem;
+    top: 0;
+    min-width: 10rem;
+    background-color: #fff;
+    border: 1px solid rgba(0,0,0,.15);
+    border-radius: 0.25rem;
+    padding: 0;
+    height: 0;
+    visibility: hidden;
+    opacity: 0;
+}
+
+.sub-menu-toggle .dropdown-item{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+
+.sub-menu-toggle:hover > .sub-menu{
+    position: absolute;
+    right: -10rem;
+    top: 0;
+    min-width: 10rem;
+    background-color: #fff;
+    border: 1px solid rgba(0,0,0,.15);
+    border-radius: 0.25rem;
+    padding: 0.5rem 0;
+    height: max-content;
+    visibility: visible;
+    opacity: 1;
+}
+
+.sub-menu a{
+    display: block;
+    color: black;
+    padding: 0.25rem 1.5rem;
+    text-decoration: none;
+}
+.sub-menu a:hover{
+    text-decoration: none;
+    background-color: #f8f9fa;
+}
+
+.sub-menu a:active{
+    background-color: #007bff;
+    color: #fff;
+}
